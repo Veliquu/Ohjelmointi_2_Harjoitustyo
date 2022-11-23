@@ -55,7 +55,7 @@ public class Tulokset {
 	}
 	@Override
 	public String toString() {
-		return "Tulokset: id = "+ id + ", päiväys =" + date + ", rata=" + rata + ", tuuli=" + tuuli +  "m/s" + ", tulos=" + tulos;    
+		return "Tulokset: id = "+ id + ", päiväys =" + date + ", rata = " + rata + ", tuuli = " + tuuli +  "m/s" + ", tulos = " + tulos;    
 	}
 	
 	
