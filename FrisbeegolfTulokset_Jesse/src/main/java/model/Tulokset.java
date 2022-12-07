@@ -1,13 +1,15 @@
 package model;
 
+import java.sql.Date;
+
 public class Tulokset {
 	
 	private int id;
-	private String date;
+	private Date date;
 	private String rata;
-	private double tuuli;
+	private String tuuli;
 	private int tulos;
-	public Tulokset(int id, String date, String rata, double tuuli, int tulos) {
+	public Tulokset(int id, Date date, String rata, String tuuli, int tulos) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -20,19 +22,19 @@ public class Tulokset {
 		this.id = 0;
 		this.date = null;
 		this.rata = null;
-		this.tuuli = 0.0;
+		this.tuuli = null;
 		this.tulos = 0;
 	}
 	public int getId() {
 		return id;
 	}
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 	public String getRata() {
 		return rata;
 	}
-	public double getTuuli() {
+	public String getTuuli() {
 		return tuuli;
 	}
 	public int getTulos() {
@@ -41,13 +43,13 @@ public class Tulokset {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public void setRata(String rata) {
 		this.rata = rata;
 	}
-	public void setTuuli(double tuuli) {
+	public void setTuuli(String tuuli) {
 		this.tuuli = tuuli;
 	}
 	public void setTulos(int tulos) {
@@ -55,7 +57,7 @@ public class Tulokset {
 	}
 	@Override
 	public String toString() {
-		return "Tulokset: id = "+ id + ", päiväys =" + date + ", rata = " + rata + ", tuuli = " + tuuli +  "m/s" + ", tulos = " + tulos;    
+		return "id = "+ id + ", päiväys =" + date + ", rata = " + rata + ", tuuli = " + tuuli + ", tulos = " + tulos;    
 	}
 	
 	
