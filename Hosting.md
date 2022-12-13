@@ -26,6 +26,13 @@ Tämän jälkeen asennetiin Apache Tomcat
 jessepi@raspberrypi:~$ sudo apt indtall tomcat9
 ```
 Laitoin verkkoselaimelle Raspberry Pin ip-osoitteen kokeillakseni onko Tomcat toiminnassa.  
+Yhdistin Tomcatin domain nimeen editoimalla `etc/hosts` tiedostoa.
+```bash
+jessepi@raspberrypi:~ $ sudo nano /etc/hosts
+ 
+ # Tiedostoon lisättiin rivi
+ 172.0.0.1     jessenikkanen.com
+ ```
 
 ---
 ### MariaDB
