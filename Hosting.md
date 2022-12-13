@@ -1,7 +1,9 @@
 ### Raspberry Pi
-Asensin pöytäkoneelle ensin [Raspberry pi Imager](https://www.raspberrypi.com/software/). Käytin tätä asentaakseni Raspberry Pi Os micro sd kortille.
+Asensin pöytäkoneelle ensin [Raspberry pi Imager](https://www.raspberrypi.com/software/). Käytin tätä asentaakseni Raspberry Pi Os micro sd kortille.  
+![RaspiOs](https://user-images.githubusercontent.com/92360351/207374530-68cf31e9-b405-4f93-824a-0abfb90a9c35.PNG)  
 
 Rataspyörää painamalla pääsin asettamaaan ssh yhteyttä varten käyttäjän ja salasanan.  
+![Sieppaa](https://user-images.githubusercontent.com/92360351/207374829-6f8f7dd2-37aa-4d38-ae29-5161c42da503.PNG)  
 
 Tein routerin asetuksissa port forwarding portteihin 80 ja 8888 ja sieltä sain myös tietoon Raspberry Pi:n ip-osoitteen.  
 Tämän jälkeen otin ssh yhteyden Rasperry Pi:
