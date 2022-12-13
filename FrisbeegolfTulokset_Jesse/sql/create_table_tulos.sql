@@ -1,5 +1,5 @@
 CREATE TABLE tulos(
-id MEDIUMINT not null AUTO_INCREMENT,
+id INTEGER NOT NULL AUTO_INCREMENT,
 paiva date,
 rata varchar(20) not null,
 tuuli varchar(10) not null,
