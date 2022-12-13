@@ -1,0 +1,1 @@
+DELETE FROM tulos WHERE id=3;
