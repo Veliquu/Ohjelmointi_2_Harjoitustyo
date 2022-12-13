@@ -115,7 +115,8 @@ Query OK, 0 rows affected (0.023 sec)
 ```
 ---
 ### Maven to War
-Tomcat vaatii war tiedoston, jota en 
+Tomcat vaatii war tiedoston, jota en saa nyt toimimaan.  
+Aika loppuu kesken tehtävän palautukseen.
 
 
 ---
