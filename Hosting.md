@@ -129,7 +129,7 @@ Query OK, 0 rows affected (0.023 sec)
 Tomcat vaatii war tiedoston, jota en saa nyt toimimaan.  
 Aika loppuu kesken tehtävän palautukseen.  
 Tomcatilla näen, että sovellus on deployattu tomcatillä  
-![tomcatHost](https://user-images.githubusercontent.com/92360351/207375941-7ffe88f2-a2f5-4e42-8ae8-d4a704ca7d47.png)  
+![Screenshot_2022-12-13_17-36-30](https://user-images.githubusercontent.com/92360351/207376716-fde89e13-93e6-4aeb-9fe5-4abd60e95fc6.png)  
 
 Mutta kun sovellukseen yrttää mennä, tulee erroria  
 ![Screenshot_2022-12-13_17-34-20](https://user-images.githubusercontent.com/92360351/207376376-30a62fe7-97cd-4bbe-b2ef-5a626c6b71d0.png)
