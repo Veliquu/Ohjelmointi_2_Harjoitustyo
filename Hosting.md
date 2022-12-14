@@ -119,7 +119,7 @@ Query OK, 0 rows affected (0.004 sec)
 ```
 Seuraavaksi loin tietokannan.
 ```bash
-CREATE DATABASE Tulokset;
+MariaDB [(none)]> CREATE DATABASE Tulokset;
 Query OK, 1 row affected (0.001 sec)
 ```
 Otin tietokannan käyttöön ja loin sinne tablen
