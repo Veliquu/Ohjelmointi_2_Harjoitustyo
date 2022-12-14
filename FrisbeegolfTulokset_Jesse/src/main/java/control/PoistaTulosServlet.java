@@ -30,7 +30,7 @@ public class PoistaTulosServlet extends HttpServlet{
 			boolean poistoOnnistui = tulosdao.removeTulos(id);
 			if (poistoOnnistui) {
 				// Uudelleenohjataan tulosten listaukseen
-				response.sendRedirect("/");
+				response.sendRedirect("/listaa-tulos");
 			} else {
 				request.setAttribute("viesti", "Tuloksen poistossa tapahtui virhe");
 				request.getRequestDispatcher("WEB-INF/tapahtumaraportti.jsp").forward(request, response);

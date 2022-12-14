@@ -44,7 +44,7 @@ public class UusiTulosServlet extends HttpServlet{
 			boolean lisaysOnnistui = tulosdao.addTulos(tulokset);
 			if (lisaysOnnistui) {
 				// uudelleenohjataan tulosten listaamiseen
-				response.sendRedirect("/");
+				response.sendRedirect("/listaa-tulos");
 			} else {
 				request.setAttribute("viesti", "Tuloksen lisäyksessä tapahtui virhe.");
 				// servlet kutsuu jsp:tä

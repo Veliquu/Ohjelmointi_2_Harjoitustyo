@@ -12,6 +12,7 @@
 <p>Sovellus hakee tietokannasta tulokset ja listaa ne.</p>
 <p>Data sisältää päivämäärän, radan nimen, tuulen nopeuden, sekä heitetyn tuloksen</p>
 <p>Sovelluksella voi myös lisätä, poistaa ja muokata tuloksia tietokannassa.</p>
+<p>Huomasin, että rataa varten sallittujen merkkien väärä on liian lyhyt</p>
 
 </body>
 </html>

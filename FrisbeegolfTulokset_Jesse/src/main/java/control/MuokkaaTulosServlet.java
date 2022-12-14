@@ -46,7 +46,7 @@ public class MuokkaaTulosServlet extends HttpServlet{
 			paivitysOnnistui = tulosdao.updateTulos(tulokset);
 			if (paivitysOnnistui) {
 				// uudelleenohjataan tulosten listaamiseen
-				response.sendRedirect("/");
+				response.sendRedirect("/listaa-tulos");
 			} else {
 				request.setAttribute("viesti", "Tuloksen muokkauksessa tapahtui virhe.");
 				// servlet kutsuu jsp:tä
