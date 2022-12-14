@@ -37,10 +37,23 @@ jessepi@raspberrypi:~ $ sudo nano /etc/hosts
  # Tiedostoon lisättiin rivi
  172.0.0.1     jessenikkanen.com
  ```
-
+ Muutin myös porttia jota tomcat käyttää.
+ ```bash
+ jessepi@raspberrypi:~$ sudo nano /etc/tomcat9/server.xml 
+ ```
+Ja tiedostossa muutettiin portti siihen mihin halutaan
+```bash
+   <Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```
+Tiedosto tallennettiin ja tomcat käynnistettiin uudelleen.
+```bash
+jessepi@raspberrypi:~$ sudo systemctl restart tomcat9.service
+```
 ---
 ### MariaDB
-Asensin MAriaDBn
+Asensin MariaDBn
 ```bash
 jessepi@raspberrypi:~$ sudo apt install mariadb
 ```
@@ -81,7 +94,7 @@ jessepi@raspberrypi:~$ sudo systemctl enable mariadb.service
 Synchronizing state of mariadb.service with SysV service script with /lib/systemd/systemd-sysv-install.
 Executing: /lib/systemd/systemd-sysv-install enable mariadb
 ```
-Tämän jälkeen siirryin MariaDbhen
+Tämän jälkeen siirryin MariaDBseen
 ```bash
 jessepi@raspberrypi:~$ sudo mariadb
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -106,7 +119,7 @@ Query OK, 0 rows affected (0.004 sec)
 ```
 Seuraavaksi loin tietokannan.
 ```bash
-CREATE DATABASE Tulokset;
+MariaDB [(none)]> CREATE DATABASE Tulokset;
 Query OK, 1 row affected (0.001 sec)
 ```
 Otin tietokannan käyttöön ja loin sinne tablen
