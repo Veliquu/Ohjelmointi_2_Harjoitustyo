@@ -1,6 +1,6 @@
 # Harjoitustyo
 Ohjelma ottaa vastaan Frisbeegolf kierroksen tuloksia.  
-Tuloksia pystyy muokkamaan ja poistamaan.  
+Tuloksia pystyy lisäämään, muokkaamaan ja poistamaan.  
 Tuloksissa otetaan talteen: 
 - Milloin tulos heitettiin
 - Missä heitettiin
