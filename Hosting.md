@@ -47,6 +47,10 @@ Ja tiedostossa muutettiin portti siihen mihin halutaan
                connectionTimeout="20000"
                redirectPort="8443" />
 ```
+Tiedosto tallennettiin ja tomcat käynnistettiin uudelleen.
+```bash
+jessepi@raspberrypi:~$ sudo systemctl restart tomcat9.service
+```
 ---
 ### MariaDB
 Asensin MAriaDBn
