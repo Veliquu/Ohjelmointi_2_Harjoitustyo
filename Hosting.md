@@ -53,7 +53,7 @@ jessepi@raspberrypi:~$ sudo systemctl restart tomcat9.service
 ```
 ---
 ### MariaDB
-Asensin MAriaDBn
+Asensin MariaDBn
 ```bash
 jessepi@raspberrypi:~$ sudo apt install mariadb
 ```
@@ -94,7 +94,7 @@ jessepi@raspberrypi:~$ sudo systemctl enable mariadb.service
 Synchronizing state of mariadb.service with SysV service script with /lib/systemd/systemd-sysv-install.
 Executing: /lib/systemd/systemd-sysv-install enable mariadb
 ```
-Tämän jälkeen siirryin MariaDbhen
+Tämän jälkeen siirryin MariaDBseen
 ```bash
 jessepi@raspberrypi:~$ sudo mariadb
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
