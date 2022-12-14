@@ -37,7 +37,16 @@ jessepi@raspberrypi:~ $ sudo nano /etc/hosts
  # Tiedostoon lisättiin rivi
  172.0.0.1     jessenikkanen.com
  ```
-
+ Muutin myös porttia jota tomcat käyttää.
+ ```bash
+ jessepi@raspberrypi:~$ sudo nano /etc/tomcat9/server.xml 
+ ```
+Ja tiedostossa muutettiin portti siihen mihin halutaan
+```bash
+   <Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```
 ---
 ### MariaDB
 Asensin MAriaDBn
