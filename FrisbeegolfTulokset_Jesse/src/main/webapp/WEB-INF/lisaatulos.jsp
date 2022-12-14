@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lis√§√§ Tulos</title>
+<title>Lis‰‰ Tulos</title>
 <style type="text/css">
 label {
 	display: block;
@@ -15,11 +15,11 @@ label {
 </style>
 </head>
 <body>
-	<h1>Lis√§√§ Tulos</h1>
+	<h1>Lis‰‰ Tulos</h1>
 	<form action="/lisaa-uusitulos" method="post">
 
 		<p>
-			<label>P√§iv√§ (yyyy-MM-dd):</label> <input type="text" value="" name="paiva"size="50" />
+			<label>P‰iv‰ (yyyy-MM-dd):</label> <input type="text" value="" name="paiva"size="50" />
 		</p>
 		<p>
 			<label>Rata:</label> <input type="text" value="" name="rata" size="50" />

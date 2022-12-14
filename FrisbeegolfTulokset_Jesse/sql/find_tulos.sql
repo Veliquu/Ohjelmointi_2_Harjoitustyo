@@ -1,0 +1,1 @@
+SELECT * FROM tulos WHERE id = 2;

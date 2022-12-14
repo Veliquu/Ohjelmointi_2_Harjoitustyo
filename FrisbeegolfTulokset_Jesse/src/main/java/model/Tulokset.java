@@ -18,6 +18,9 @@ public class Tulokset {
 		this.tuuli = tuuli;
 		this.tulos = tulos;
 	}
+	public Tulokset(int id) {
+		this.id = id;
+	}	
 	public Tulokset(int id, Date paiva, String rata, String tuuli, int tulos) {
 		super();
 		this.id = id;

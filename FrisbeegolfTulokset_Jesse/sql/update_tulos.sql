@@ -1,0 +1,1 @@
+UPDATE tulos SET paiva = ?, rata = ?, tuuli = ?, tulos = ? WHERE id=?;

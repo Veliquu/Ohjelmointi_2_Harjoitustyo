@@ -48,7 +48,7 @@ public class UusiTulosServlet extends HttpServlet{
 			} else {
 				request.setAttribute("viesti", "Tuloksen lisäyksessä tapahtui virhe.");
 				// servlet kutsuu jsp:tä
-				request.getRequestDispatcher("/WEB-INF/tapahtumaraporrti.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/tapahtumaraportti.jsp").forward(request, response);
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

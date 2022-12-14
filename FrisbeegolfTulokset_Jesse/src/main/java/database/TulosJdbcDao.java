@@ -121,26 +121,26 @@ public class TulosJdbcDao implements TulosDao{
 	}
 
 	@Override
-	public Tulokset findById(int id) {
+	public List<Tulokset> findById(int id) {
 		Connection connection = null;
 		PreparedStatement stmUpdate = null;
 		ResultSet resultset = null;
-		Tulokset foundTulos = null;
-		
+		List<Tulokset> foundTulos = new ArrayList<Tulokset>();
+		Tulokset tulos = null;
 		try {
+			// Luodaan yhteys tietokantaan
 			connection = Database.getDBConnection();
-			String sqlUpdate = "SELECT FROM tulos WHERE id = ?;";
+			// Komento jolla etsitään tulos tietokannasta
+			String sqlUpdate = "SELECT * FROM tulos WHERE id = ?";
 			stmUpdate = connection.prepareStatement(sqlUpdate);
 			stmUpdate.setInt(1, id);
-			
+			// Lähetetään komento suoritettavaksi tietokantaan
 			resultset = stmUpdate.executeQuery();
 			
 			while (resultset.next()) {
-				Date paiva =resultset.getDate("paiva");
-				String rata = resultset.getString("rata");
-				String tuuli = resultset.getString("tuuli");
-				int tulos = resultset.getInt("tulos");
-				foundTulos = new Tulokset(id, paiva, rata, tuuli, tulos);
+				tulos = readTulos(resultset);
+				
+				foundTulos.add(tulos);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -160,7 +160,7 @@ public class TulosJdbcDao implements TulosDao{
 			// Luodaan yhteys tietokantaan
 			connection = Database.getDBConnection();
 			// Luodaan komento, joka luo uuden tuloksen tietokannan tauluun
-			String sqlInsert = "UPDATE tulos SET paiva = ?, rata = ?, tuuli = ? tulos = ?) WHERE id = ?;";
+			String sqlInsert = "UPDATE tulos SET paiva = ?, rata = ?, tuuli = ?, tulos = ? WHERE id=?";
 			// Valmistellaan komento
 			stmUpdate = connection.prepareStatement(sqlInsert);
 			// Asetetaan pareametrisoidun komennon parametrit yksi kerrallaan

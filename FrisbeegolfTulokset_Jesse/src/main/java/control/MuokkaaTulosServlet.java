@@ -23,37 +23,41 @@ public class MuokkaaTulosServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		try {
+			boolean paivitysOnnistui = false;
+			// Sijoitetaan muuttujaan pyynnön parametrina tullut tuloksen id-arvo
+			String idStr = request.getParameter("id");
+			int id = Integer.parseInt(idStr);
+			Tulokset tulokset = new Tulokset(id);
+			
+			// Pyydetään lomakkeella syötetyn asiakkaan tiedot
+			String paivaSTR = request.getParameter("paiva");
+			// Muutetaan paivaSTR sql date formaattiin
+			Date paiva = java.sql.Date.valueOf(paivaSTR);
+			String rata = request.getParameter("rata");
+			String tuuli = request.getParameter("tuuli");
+			String tulosStr = request.getParameter("tulos");
+			int tulos = Integer.parseInt(tulosStr);
+			// Luodaan uusi Tulokset luokan olio edellisillä parametreillä
+			tulokset = new Tulokset(id, paiva, rata, tuuli, tulos);
 			TulosDao tulosdao = new TulosJdbcDao();
-		// Pyydetään lomakkeella syötetyn asiakkaan tiedot
-					String paivaSTR = request.getParameter("paiva");
-					// Muutetaan paivaSTR sql date formaattiin
-					Date paiva = java.sql.Date.valueOf(paivaSTR);
-					String rata = request.getParameter("rata");
-					String tuuli = request.getParameter("tuuli");
-					String tulosStr = request.getParameter("tulos");
-					int tulos = Integer.parseInt(tulosStr);
-					
-					// Luodaan uusi Tulokset luokan olio edellisillä parametreillä
-					Tulokset tulokset = new Tulokset(paiva, rata, tuuli, tulos);
-					
-
-					// Tallennetaan tiedot tietokantaan
-					boolean paivitysOnnistui = tulosdao.updateTulos(tulokset);
-					if (paivitysOnnistui) {
-						// uudelleenohjataan tulosten listaamiseen
-						response.sendRedirect("/");
-					} else {
-						request.setAttribute("viesti", "Tuloksen muokkauksessa tapahtui virhe.");
-						// servlet kutsuu jsp:tä
-						request.getRequestDispatcher("/WEB-INF/tapahtumaraporrti.jsp").forward(request, response);
-					}
-				} catch (NumberFormatException e) {
-					e.printStackTrace();
-					request.setAttribute("viesti", "Syötetyt tiedot eivät olleet kelvolliset.");
-					request.getRequestDispatcher("WEB-INF/tapahtumaraportti.jsp").forward(request, response);
+			// Tallennetaan tiedot tietokantaan
+			paivitysOnnistui = tulosdao.updateTulos(tulokset);
+			if (paivitysOnnistui) {
+				// uudelleenohjataan tulosten listaamiseen
+				response.sendRedirect("/");
+			} else {
+				request.setAttribute("viesti", "Tuloksen muokkauksessa tapahtui virhe.");
+				// servlet kutsuu jsp:tä
+				request.getRequestDispatcher("/WEB-INF/tapahtumaraportti.jsp").forward(request, response);
+			}
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			request.setAttribute("viesti", "Syötetyt tiedot eivät olleet kelvolliset.");
+			request.getRequestDispatcher("WEB-INF/tapahtumaraportti.jsp").forward(request, response);
 				
-				}
+		}
 	}
 
 }
